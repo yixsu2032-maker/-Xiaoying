@@ -1,37 +1,105 @@
-[扩充统计与检查说明.md](https://github.com/user-attachments/files/32692633/default.md)
-# 应用导航 1025 条目版
+# App Navigator
 
-更新日期：2026-09-27。原有 285 条，新增 740 条，共 1025 条。包括手机应用、桌面软件、网页服务、游戏平台及游戏产品；不是全部均有手机 App。
+> Open official websites in one click and discover popular apps worldwide.
 
-|分类|数量|
-|---|---:|
-|社交|63|
-|通讯|56|
-|视频|68|
-|音乐|59|
-|人工智能|102|
-|游戏|123|
-|购物|70|
-|金融|66|
-|效率|209|
-|新闻|70|
-|旅行|71|
-|健康|68|
-|总计|1025|
+An app directory featuring widely used services in mainland China and around the world. Browse by category, search instantly, read app descriptions, and visit official websites. The current catalog includes **1,217 apps and services**, **12 categories**, **20 languages**, and **8 themes**. The default interface uses Chinese and the light theme.
 
-保留 20 种语言、8 种主题、Logo、应用详情页、复制链接/访问官网切换、原有文案与按钮位置。图标增加延迟加载。中英文公司搜索扩充，所有品牌映射均指向现有条目。详情页延续原来的多语言基础模板，并非逐款撰写的功能说明。
+## Features
 
-检查：打包构建成功；规范化 URL 和名称去重；1025 条 HTTPS URL 格式有效；12 分类、20 语言完整；首页、复制模式和英文详情页通过服务端渲染检查。未进行新一轮浏览器实机视觉验证。
+- **Instant search:** Find apps by name, keyword, or supported Chinese and English brand aliases, including NetEase, Tencent, ByteDance, Alibaba, Google, and Meta.
+- **Category filters:** Browse apps by category and see the number of entries in each category.
+- **Two action modes:** Switch between “Visit Website” and “Copy Link.” App card buttons update to match the selected mode.
+- **Copy feedback:** A successful copy displays “Copied” for 5 seconds.
+- **App details:** Click an app's icon or name to view a larger icon, its name, publisher or operator, and a description of its purpose.
+- **Multilingual interface:** Changing the language updates the interface and app descriptions. Some descriptions use category-based templates; brand and operator names may remain in their original language.
+- **Theme selection:** Choose from Light, Dark, Ocean, Forest, Sunset, Purple, Rose, and Slate.
+- **Animated mode switching:** The action selector uses an approximately 0.25-second sliding transition. Related animations are disabled when reduced motion is preferred.
+- **Responsive layout:** The page adapts to desktop and mobile screen widths.
 
-链接采用官网或官方项目页，进行了重点抽查，未对全部 1025 个站点逐一进行联网可访问性验证。部分产品按地区提供服务。
+## App Categories
 
-核查参考：
-- [Microsoft 产品目录](https://www.microsoft.com/en-us/microsoft-365/products-apps-services)
-- [Google Workspace](https://workspace.google.com/products/)
-- [Adobe 产品目录](https://www.adobe.com/products/catalog.html)
-- [JetBrains 产品目录](https://www.jetbrains.com/products/)
-- [Supercell 游戏](https://supercell.com/en/games/)
-- [Klei 游戏](https://www.klei.com/games)
-- [Dola](https://www.dola.com/)
+These counts reflect the current source code and may change as the catalog is updated.
 
-使用：双击 Codex 文件夹中的「应用导航.html」。更新 GitHub Pages 时用本目录的 index.html 替换仓库中同名文件并提交。此次仅更新本地文件，未发布线上网站。
+| Category | Apps |
+| --- | ---: |
+| Social | 79 |
+| Messaging | 72 |
+| Video | 84 |
+| Music | 75 |
+| AI | 118 |
+| Games | 139 |
+| Shopping | 86 |
+| Finance | 82 |
+| Productivity | 225 |
+| News | 86 |
+| Travel | 87 |
+| Health | 84 |
+| **Total** | **1,217** |
+
+## Local Use
+
+1. Open `应用导航.html` in Chrome, Edge, or another modern browser.
+2. Enter an app or brand name in the search box, or select a category.
+3. Click an app's icon or name to read its description. Use its action button to visit the website or copy the link.
+4. Adjust the language and theme using the menus at the top of the page.
+
+The interface is bundled into the HTML file. You do not need Node.js or a development server to view it. External logos, official websites, and other remote resources still require an internet connection.
+
+Language, theme, and action-mode preferences are not persisted. Refreshing the page restores Chinese, the light theme, and “Visit Website” mode.
+
+## Files
+
+| File | Purpose |
+| --- | --- |
+| `应用导航.html` | Complete webpage that opens directly in a browser. Copy and rename it to `index.html` for publishing. |
+| `AppNavigator.tsx` | React / TypeScript source for further development. Rebuild the webpage after making changes. |
+| `README.md` | Project documentation. |
+| Icon audit lists and update records | Notes on selected icon sources, changes, and verification status. These files are not required to run the website. |
+
+Editing the `.tsx` file does not automatically update the generated HTML. The project uses React 18, TypeScript/TSX, Tailwind CSS, and esbuild. The current local build script is `build.cjs` in the working directory.
+
+## Publishing with GitHub Pages
+
+Copy the latest `应用导航.html`, rename the copy to **`index.html`**, and upload it to the top level of your configured GitHub Pages publishing directory. You can include this README in the repository to introduce the project.
+
+Configure the publishing source under **Settings → Pages** in your repository. Once deployment finishes, select **Visit site** to open the website. To publish updates, upload the latest `index.html` again; changing a local file does not automatically update the published site.
+
+See the [official GitHub Pages guide](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site) for setup details.
+
+## Icons and Content
+
+Icons come from several sources, including official websites, app stores, official project accounts, brand icon libraries, and partner pages. Dola's icon is embedded in the webpage; most other icons remain remote images.
+
+Apps without a dedicated icon override may still use a website favicon service. A globe, gray arrow, or initials may be a placeholder rather than the app's actual logo. Broken image links, access restrictions, and changes at the source can affect display. Changing the theme does not resolve an image-source problem.
+
+App descriptions provide an introduction to each product, and some use templates. Operators, features, regional availability, and official URLs may change. Refer to the app's official information for current details.
+
+## Frequently Asked Questions
+
+**Why am I still seeing an older version?**
+
+Make sure you opened the latest file. Your local HTML file and the GitHub Pages website are separate copies. Update the published file, wait for deployment to finish, and refresh your browser.
+
+**Does “Visit Website” download the app directly?**
+
+No. It opens the listed official website. Downloads, registration, and other actions are handled by that website.
+
+**Why did copying a link fail?**
+
+Your browser may restrict clipboard access. Allow clipboard access for the page and try again, or visit the website and copy its URL from the address bar.
+
+**Can I use the directory entirely offline?**
+
+The interface and bundled app data can be viewed offline. Remote icons and external websites require an internet connection.
+
+## Maintenance and Verification
+
+The current version has passed the webpage build, app-name and URL uniqueness checks, category-count checks, and selected functional checks covering description length, multilingual rendering, copy-feedback timing, and the scope of targeted icon changes.
+
+These checks do not mean every external link and logo has been individually verified in a browser. When reporting an issue, include the app name, the observed problem, and the correct official website or icon source if available.
+
+App names, logos, and trademarks belong to their respective owners. This project provides navigation and information and does not imply an official partnership with any listed app. Third-party images remain subject to their source terms; this document does not grant permission to use those assets.
+
+---
+
+You've reached the end～
